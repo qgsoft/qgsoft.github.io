@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <title>代理商家</title>
+    <style>
+        .queryTextBox{
+            width:95%;text-align: center;
+            height: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .querybutton{
+            margin-top:10px; 
+            height: 35px;
+            width: 96%;
+            background-color: royalblue;
+            border: 0;
+            color: white;
+            border-radius: 8px;
+        }
+        .querybutton:disabled{
+            background-color: #d9d9d9;
+        }
+    </style>
+</head>
+<body style="background-color: #f9f9f9;">
+    <script>
+        function OnQuery(){
+            $("#querybtn").val("正在查询...请稍后");
+            $("#querybtn").attr("disabled",true);
+        }
+    </script>
+    <div style="text-align: center;">
+        <label style="font-size: 14px;">输入对方徽信号可查询是否为真实代理(点击对方微信头像长按微信号复制)，例如：</label>
+        <img src="./images/wechat_pre.jpg" width="90%" height="50%" style="border:solid 1px #ddd;margin-top: 10px;" />
+        <div style="margin-top: 10px;">
+            <input type="text" max="50" class="queryTextBox" placeholder="输入微信号" value="" spellcheck="false" autofocus autocomplete="off">
+            <input id="querybtn" type="button" value="查询" class="querybutton" onclick="OnQuery()" />
+        </div>
+    </div>    
+</body>
+</html>
