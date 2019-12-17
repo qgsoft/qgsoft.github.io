@@ -133,12 +133,14 @@ function objectIsHide(ele,video) {
         var node = ele[i];
         if( node.clientHeight > 0 && video.paused ) {
             video.play();
+            console.log("播放一次");
             break;         
         }
     }
 }
 
 //恢复视频状态,在浏览器里打开APP了标头了会调用这个方法
+/*
 function videosite(){   
     if( window.location.host.concat("iqiyi") ){
         var video = document.getElementById('video');
@@ -162,6 +164,7 @@ function videosite(){
         },300);      
     }
 }
+*/
 
 if( !document.getElementById("qginit") ){
     var newEle = document.createElement("script");
@@ -173,7 +176,6 @@ if( !document.getElementById("qginit") ){
         if( window.qgjs.adenabled()){
             begindeletead();
         }
-        videosite();
     } else {
         begindeletead();
     }
