@@ -166,7 +166,7 @@ function videosite(){
 }
 */
 
-function PlayerVideo(){
+function QGPlayerVideo(){
     if( window.location.host.concat("iqiyi") ) {
         document.getElementById('video').play();
     }
