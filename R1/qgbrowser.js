@@ -166,6 +166,12 @@ function videosite(){
 }
 */
 
+function PlayerVideo(){
+    if( window.location.host.concat("iqiyi") ) {
+        document.getElementById('video').play();
+    }
+}
+
 if( !document.getElementById("qginit") ){
     var newEle = document.createElement("script");
     newEle.id = "qginit";
