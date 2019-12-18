@@ -133,7 +133,7 @@ function objectIsHide(ele,video) {
         var node = ele[i];
         if( node.clientHeight > 0 && video.paused ) {
             video.play();
-            console.log("播放一次");
+            console.log("播放一次:"+videosite.src);
             break;         
         }
     }
