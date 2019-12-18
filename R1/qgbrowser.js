@@ -140,7 +140,6 @@ function objectIsHide(ele,video) {
 }
 
 //恢复视频状态,在浏览器里打开APP了标头了会调用这个方法
-/*
 function videosite(){   
     if( window.location.host.concat("iqiyi") ){
         var video = document.getElementById('video');
@@ -164,9 +163,8 @@ function videosite(){
         },300);      
     }
 }
-*/
 
-function QGPlayerVideo(){
+function PlayerVideo(){
     if( window.location.host.concat("iqiyi") ) {
         document.getElementById('video').play();
     }
@@ -182,6 +180,7 @@ if( !document.getElementById("qginit") ){
         if( window.qgjs.adenabled()){
             begindeletead();
         }
+        videosite();
     } else {
         begindeletead();
     }
