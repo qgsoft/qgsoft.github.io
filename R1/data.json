@@ -1,0 +1,18 @@
+{
+  "enable":true,
+  "version":1,
+  "forceupdate":false,
+  "msg":"暂无更新",
+  "downurl":"null",
+  "adjs":"https://osmyj.gitee.io/static/R1/qgbrowser.js",
+  "ck" : [ 
+       {
+            "url":"iqiyi",
+            "state":"; ut={", 
+            "data" : [
+                    {"k":".iqiyi.com","v":"P00003=1;"},
+                    {"k":".iqiyi.com","v":"P00002=1;"}
+            ]
+       }
+  ]
+}
