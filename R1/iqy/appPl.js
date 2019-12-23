@@ -522,18 +522,11 @@
           t = this.response && this.response.videos || [
           ];
           return t = t.map(function (t, i) {
+            //添加类型为2则不打开APP
             t.type = 2;
+            t.isCallApp = false;
             return t.isSelected = t.isSelected || t.qipuId === e.videoInfo.qipuId,
-            t.pageUrl = t.pageUrl.indexOf('vfrm') > - 1 ? t.pageUrl : ''.concat(t.pageUrl, '#vfrm=').concat(e.subTemplate.source ? '30-28-19-7' : '30-26-19-7'),
-            e.isCallApp && 2 !== t.type && (t.play = {
-              callApp: false,
-              card: 'videoAround',
-              redirect: !1,
-              url: t.pageUrl,
-              qipuId: t.qipuId,
-              continuous: !0,
-              selectClass: 'selected'
-            }, t.upperRightCorner = 'APP'),
+            t.pageUrl = t.pageUrl,
             t.subtitle = '',
             t.lowerRightCorner = 2 === t.type && t.playCount ? t.playCount + '' : t.duration,
             t
@@ -652,17 +645,7 @@
           return t
         }(),
         callApp: function (e, t) {
-          /*
-          this.isCallApp && this.$dispatch('GlobalCallapp', 'toPlay', {
-            extralOptions: {
-              aid: e.albumId,
-              cid: e.cid,
-              vid: e.vid,
-              tvid: e.qipuId
-            },
-            subtype: this.subtype
-          })
-          */
+         
         }
       }
     },
@@ -1037,72 +1020,7 @@
       var e = this,
       t = e.$createElement,
       i = e._self._c || t;
-      return e.show ? i('div', [
-        i('div', {
-          staticClass: 'm-video-poster',
-          staticStyle: {
-            'z-index': '960'
-          }
-        }, [
-          i('img', {
-            attrs: {
-              id: 'player-posterimg',
-              src: e.imageUrl
-            }
-          })
-        ]),
-        i('div', {
-          staticClass: 'm-play-loginLaqi',
-          staticStyle: {
-            'z-index': '961'
-          }
-        }, [
-          i('div', {
-            staticClass: 'player-tip-inner'
-          }, [
-            i('a', {
-              directives: [
-                {
-                  name: 'pingback',
-                  rawName: 'v-pingback',
-                  value: 'h5_xuanjiAPP_log',
-                  expression: '\'h5_xuanjiAPP_log\''
-                }
-              ],
-              staticClass: 'c-link login',
-              attrs: {
-                href: '/user.html'
-              }
-            }, [
-              i('i', {
-                staticClass: 'c-glyphicon c-glyphicon-albumPlay'
-              }),
-              e._v(e._s(e.loginText) + '\n      ')
-            ]),
-            i('PlayButtonDown', {
-              directives: [
-                {
-                  name: 'pingback',
-                  rawName: 'v-pingback',
-                  value: 'h5_xuanjiAPP_app',
-                  expression: '\'h5_xuanjiAPP_app\''
-                }
-              ],
-              staticClass: 'c-link laqi',
-              attrs: {
-                subtype: 'H5bfyx_821',
-                href: 'javascript:void(0)',
-                'down-app-url': '//ota.iqiyi.com/f4.jsp?url=h5-xuanji'
-              }
-            }, [
-              i('i', {
-                staticClass: 'c-glyphicon c-glyphicon-iqy'
-              }),
-              e._v(e._s(e.BtnText) + '\n      ')
-            ])
-          ], 1)
-        ])
-      ])  : e._e()
+      return e._e()
     },
     D = [
     ],
