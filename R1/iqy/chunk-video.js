@@ -1066,6 +1066,8 @@
       return i
     }
     function Y(e, t, i) {
+      e.bid=600;
+      e.abid=600;
       if (!window.cmd5xdash || !window.cmd5x) throw Error('anti-theft chain fail: window.cmd5xdash or window.cmd5x is undefined');
       var a = window.cmd5xdash ? window.cmd5xdash()  : {
       };
@@ -1926,48 +1928,8 @@
         },
         info: function () {
           var e = {
-          },
-          t = this.videoInfo,
-          i = t.data,
-          n = i.st;
-          return e = this.isPano(t) ? true
-           : this.videoInfo.code ? 'A00001' === this.videoInfo.code ? {
-            text: '很抱歉<br>您所查看的视频不存在',
-            returnHomeText: '去看看其他视频'
-          }
-           : 501 === n ? {
-            text: '很抱歉，该平台无法观看本视频<br>下载爱奇艺APP观看海量高清视频',
-            callAppText: '去爱奇艺APP观看'
-          }
-           : 502 === n ? {
-            text: '很抱歉，由于版权限制，<br>您所在的地区暂时无法观看该视频',
-            returnHomeText: '去看看其他视频'
-          }
-           : 509 === n ? {
-            text: '很抱歉，该视频为私密视频，本平台暂无法观看',
-            returnHomeText: '去看看其他视频'
-          }
-           : 503 === n ? {
-            text: '很抱歉<br>该视频尚未通过审核，暂时无法观看',
-            returnHomeText: '去看看其他视频'
-          }
-           : [
-            492,
-            405,
-            406
-          ].includes(n) ? {
-            text: '很抱歉<br>您所查看的视频已下线',
-            returnHomeText: '去看看其他视频'
-          }
-           : {
-            text: '很抱歉<br>您所查看的视频不存在',
-            returnHomeText: '去看看其他视频'
-          }
-           : {
-            text: '很抱歉<br>当前视频暂时无法播放，请您稍后再试',
-            returnHomeText: '去看看其他视频'
-          },
-          e
+          };
+          return e;
         }
       },
       methods: {
@@ -1979,13 +1941,7 @@
           return !1
         },
         callApp: function (e) {
-          this.$dispatch('GlobalCallapp', 'toPlay', {
-            extralOptions: Object(s['a']) ({
-            }, this.videoInfo),
-            subtype: this.subtype,
-            rseat: 'mcltdown_4bfydwn',
-            event: e
-          })
+          
         }
       }
     },
@@ -4341,23 +4297,7 @@
       },
       methods: {
         callApp: function (e) {
-          var t = e.from,
-          i = void 0 === t ? '' : t,
-          n = e.failToUrl,
-          a = Lt['g'][i] || {
-          },
-          r = a.subtype || this.subType,
-          o = this.cid || this.videoInfo.cid || (this.videoInfo.data ? this.videoInfo.data.cid : '') || '',
-          s = this.tvid || this.videoInfo.tvid || '';
-          this.$dispatch('GlobalCallapp', 'toPlay', {
-            extralOptions: {
-              progress: this.$parent.video.currentTime(),
-              cid: o,
-              tvid: s
-            },
-            subtype: r,
-            failToUrl: n
-          })
+          
         }
       }
     },
@@ -4895,171 +4835,7 @@
       var e = this,
       t = e.$createElement,
       i = e._self._c || t;
-      return i('div', [
-        e.startShow ? i('div', {
-          staticClass: 'm-play-appGuide',
-          style: 'background-image: url(' + e.poster + ')'
-        }, [
-          i('div', {
-            staticClass: 'handle'
-          }, [
-            i('a', {
-              staticClass: 'c-link',
-              attrs: {
-                href: 'javascript:void(0)'
-              },
-              on: {
-                click: e.play
-              }
-            }, [
-              i('i', {
-                staticClass: 'c-glyphicon c-glyphicon-albumPlay'
-              }),
-              e._v('试看5分钟\n      ')
-            ]),
-            i('a', {
-              directives: [
-                {
-                  name: 'copy-callapp',
-                  rawName: 'v-copy-callapp',
-                  value: {
-                    video: e.videoInfo,
-                    subtype: e.subtype
-                  },
-                  expression: '{video: videoInfo, subtype: subtype}'
-                }
-              ],
-              staticClass: 'c-link',
-              attrs: {
-                href: 'javascript:void(0)'
-              },
-              on: {
-                click: function (t) {
-                  return e.redirectOrCallApp({
-                    toCopy: !0
-                  })
-                }
-              }
-            }, [
-              e._v('\n        进入爱奇艺观看完整版\n      ')
-            ])
-          ])
-        ])  : e._e(),
-        e.endShow ? i('div', {
-          staticClass: 'm-play-appGuide guide-bgcol',
-          style: 'background-image: url(' + e.poster + ')'
-        }, [
-          i('a', {
-            directives: [
-              {
-                name: 'copy-callapp',
-                rawName: 'v-copy-callapp',
-                value: {
-                  video: e.videoInfo,
-                  subtype: e.subtype
-                },
-                expression: '{video: videoInfo, subtype: subtype}'
-              }
-            ],
-            staticClass: 'c-link c-link-iqy',
-            attrs: {
-              href: 'javascript:void(0)'
-            },
-            on: {
-              click: function (t) {
-                return e.redirectOrCallApp({
-                  toCopy: !0
-                })
-              }
-            }
-          }, [
-            i('i', {
-              staticClass: 'c-glyphicon c-glyphicon-iqy'
-            }),
-            e._v('进入爱奇艺，观看完整版\n    ')
-          ]),
-          i('a', {
-            staticClass: 'c-link c-link-again',
-            attrs: {
-              href: 'javascript:void(0)'
-            },
-            on: {
-              click: e.replayPlay
-            }
-          }, [
-            i('i', {
-              staticClass: 'c-glyphicon c-glyphicon-album-Bplay'
-            }),
-            e._v('重新播放\n    ')
-          ])
-        ])  : e._e(),
-        e.continueShow ? i('div', {
-          staticClass: 'm-play-appGuide guide-bgcol',
-          style: 'background-image: url(' + e.poster + ')'
-        }, [
-          e._t('callApp', [
-            i('a', {
-              directives: [
-                {
-                  name: 'copy-callapp',
-                  rawName: 'v-copy-callapp',
-                  value: {
-                    video: e.videoInfo,
-                    subtype: e.subtype
-                  },
-                  expression: '{video: videoInfo, subtype: subtype}'
-                },
-                {
-                  name: 'show-pingback',
-                  rawName: 'v-show-pingback',
-                  value: '806081_floatlayer',
-                  expression: '\'806081_floatlayer\''
-                },
-                {
-                  name: 'pingback',
-                  rawName: 'v-pingback',
-                  value: '806081_daoliu',
-                  expression: '\'806081_daoliu\''
-                }
-              ],
-              staticClass: 'c-link c-link-iqy',
-              attrs: {
-                href: 'javascript:void(0)'
-              },
-              on: {
-                click: e.redirectOrCallApp
-              }
-            }, [
-              i('i', {
-                staticClass: 'c-glyphicon c-glyphicon-iqy'
-              }),
-              e._v('打开爱奇艺，提升3倍流畅度!\n      ')
-            ])
-          ]),
-          i('a', {
-            directives: [
-              {
-                name: 'pingback',
-                rawName: 'v-pingback',
-                value: '806081_continue',
-                expression: '\'806081_continue\''
-              }
-            ],
-            staticClass: 'c-link c-link-again',
-            attrs: {
-              href: 'javascript:void(0)'
-            },
-            on: {
-              click: e.continuePlay
-            }
-          }, [
-            i('i', {
-              staticClass: 'c-glyphicon c-glyphicon-album-Bplay'
-            }),
-            e._v('继续播\n    ')
-          ])
-        ], 2)  : e._e()
-      ])
+      return i;
     },
     Zt = [
     ],
@@ -5194,14 +4970,7 @@
           this.continueShow = !1
         },
         redirectOrCallApp: function () {
-          var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
-          },
-          t = e.toCopy ? {
-            failToUrl: '/m5/app/guide.html?redirect_url='.concat(encodeURIComponent(location.href))
-          }
-           : {
-          };
-          this.callApp(t)
+         
         },
         getLimitStatus: function () {
           return !this.whiteCondtion()
@@ -5259,108 +5028,7 @@
       var e = this,
       t = e.$createElement,
       i = e._self._c || t;
-      return e.isLimit ? i('div', [
-        e.startShow ? i('div', {
-          staticClass: 'm-play-appGuide',
-          style: 'background-image: url(' + e.poster + ');'
-        }, [
-          i('div', {
-            staticClass: 'handle'
-          }, [
-            i('a', {
-              directives: [
-                {
-                  name: 'pingback',
-                  rawName: 'v-pingback',
-                  value: 'h5_xuanji_5min',
-                  expression: '\'h5_xuanji_5min\''
-                }
-              ],
-              staticClass: 'c-link',
-              attrs: {
-                href: 'javascript:void(0)'
-              },
-              on: {
-                click: e.play
-              }
-            }, [
-              i('i', {
-                staticClass: 'c-glyphicon c-glyphicon-albumPlay'
-              }),
-              e._v('试看5分钟\n      ')
-            ]),
-            i('ButtonDown', {
-              staticClass: 'c-link',
-              attrs: {
-                subtype: e.subtype,
-                'extral-options': e.extralOptions(),
-                tag: 'a',
-                href: 'javascript:void(0);',
-                'to-page': 'play'
-              }
-            }, [
-              e._v('\n        进入爱奇艺观看完整版\n      ')
-            ])
-          ], 1)
-        ])  : e._e(),
-        e.endShow ? i('div', {
-          directives: [
-            {
-              name: 'show-pingback',
-              rawName: 'v-show-pingback',
-              value: 'h5_block_xianbo_seeend',
-              expression: '\'h5_block_xianbo_seeend\''
-            }
-          ],
-          staticClass: 'm-player-tip m-video-limitePlay'
-        }, [
-          i('div', {
-            staticClass: 'player-tip-inner'
-          }, [
-            e.isVip ? e._e()  : i('div', {
-              staticClass: 'c-player-tip-info'
-            }, [
-              e._v('试看结束')
-            ]),
-            i('div', {
-              staticClass: 'c-player-tip-info'
-            }, [
-              e._v(e._s(e.tipInfo))
-            ]),
-            i('div', {
-              staticClass: 'player-tip-btn'
-            }, [
-              i('ButtonDown', {
-                staticClass: 'c-link laqi',
-                attrs: {
-                  subtype: e.subtype,
-                  'extral-options': e.extralOptions(),
-                  tag: 'a',
-                  rseat: 'h5_xianbo_seeend',
-                  href: 'javascript:void(0);',
-                  'to-page': 'play'
-                }
-              }, [
-                e._v('观看完整版\n        ')
-              ])
-            ], 1),
-            e.isVip ? e._e()  : i('a', {
-              staticClass: 'c-refresh-btn',
-              attrs: {
-                href: 'javascript:void(0)'
-              },
-              on: {
-                click: e.replayPlay
-              }
-            }, [
-              i('i', {
-                staticClass: 'c-glyphicon c-glyphicon-playRefresh'
-              }),
-              e._v('重新播放\n      ')
-            ])
-          ])
-        ])  : e._e()
-      ])  : e._e()
+      return false;
     },
     yi = [
     ],
@@ -5456,13 +5124,7 @@
             e.tvid = i.tvid,
             e.duration = i.duration,
             i && (i.purchaseType = + e.purchaseType),
-            e.isLimit = Object(bi['a']) (i, e.playTemplate, e.limitFilter, e.vipUser),
-            e.isLimit && (1 !== + e.purchaseType && 2 !== + e.purchaseType || e.vipUser ? (e.isVip = !1, e.tipInfo = '请打开爱奇艺APP观看完整版 ', e.startShow = !e.redirect, e.endShow = !1)  : (e.isVip = !0, e.tipInfo = '由于版权限制，请打开爱奇艺App观看完整版', e.endShow = !0, e.startShow = !1), setTimeout(function () {
-              e.video.pause(),
-              e.$emit('stopPlay')
-            }, 100), setTimeout(function () {
-              e.video.paused() || (e.video.pause(), e.$emit('stopPlay'))
-            }, 300))
+            e.isLimit = false
           })
         },
         extralOptions: function () {
@@ -5476,26 +5138,7 @@
           }
         },
         callApp: function () {
-          var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : '',
-          t = Lt['g'][e] || {
-          },
-          i = this.subtype,
-          n = this.cid || this.videoInfo.cid || (this.videoInfo.data ? this.videoInfo.data.cid : '') || '',
-          a = this.tvid || this.videoInfo.tvid || '';
-          return Object(Lt['w']) ({
-            down: 0,
-            ftype: 27,
-            progress: this.$parent.video.currentTime(),
-            cid: n,
-            tvid: a,
-            subtype: i
-          }).catch (function () {
-            var e = t.downloadUrl || Object(Lt['l']) ({
-              downAppPos: 'play_button_open'
-            });
-            return Object(Lt['j']) (e),
-            l.a.reject(new Error('callapp fail'))
-          })
+          
         },
         play: function () {
           Object(ki['l']) ({
@@ -5519,11 +5162,7 @@
           this.endShow = !1
         },
         redirectOrCallApp: function () {
-          var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {
-          };
-          this.callApp().catch (function () {
-            e.toCopy && (location.href = '/m5/app/guide.html?redirect_url='.concat(encodeURIComponent(location.href)))
-          })
+       
         },
         start: function () {
           this.timer = _i(1000) (this.limit.bind(this))

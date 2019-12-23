@@ -80,6 +80,7 @@
         appsa: 'appsa',
         appsal: 'appsal',
         appsech: 'appsech',
+        appsmv: 'appsmv',
         appsq: 'appsq',
         apptl: 'apptl',
         apptw: 'apptw',
@@ -140,9 +141,9 @@
       [
         e
       ] || e) + '.' + {
-        appaca: 'fc4615b5',
-        'chunk-channel': '75018fe2',
-        'chunk-common': '2d721243',
+        appaca: 'c7a5c22e',
+        'chunk-channel': 'f7d39134',
+        'chunk-common': '303597d7',
         app: '8362eccd',
         appae: '9a293edf',
         appcad: '30f3c5b5',
@@ -152,7 +153,7 @@
         appcedu: '80001eed',
         appcf: 'b6bb1c7f',
         appcg: 'acad0df7',
-        appch: 'f76d5ab2',
+        appch: 'b6137afc',
         appcjk: '4460e23b',
         appcjlp: '63fe0764',
         appckj: '88a89097',
@@ -176,23 +177,24 @@
         appmil: '5d5e777e',
         appty: 'f5de3d6a',
         appvip: '655f341e',
-        'chunk-play': 'c49f5c03',
-        'chunk-video': 'dfeb5517',
+        'chunk-play': 'a0c2d9cc',
+        'chunk-video': '10173d86',
         appcapd: 'bdd6eb8c',
-        app404: '1db256d6',
-        appa: '070d153f',
+        app404: '4baa9187',
+        appa: '18bca45c',
         appb: '80161db1',
         appcl: '8c421fcd',
         appcr: '300494af',
-        appf: '8ef1fd98',
+        appf: '1a06b631',
         apppi: '209cbb41',
-        apps: 'c4a4db31',
-        appsa: '31bd7f0a',
-        appsal: '890f0397',
+        apps: '72dbd968',
+        appsa: 'da0e2f3b',
+        appsal: '0ae3a656',
         appsech: 'a17e6108',
+        appsmv: '4e399689',
         appsq: '4f03e8e2',
-        apptl: '881fffc0',
-        apptw: '3d372e57',
+        apptl: 'eada7efb',
+        apptw: '977f49ff',
         appua: '21499ab5',
         appuac: '92a18526',
         appuamn: '5cb5e346',
@@ -208,19 +210,19 @@
         appup: '958df155',
         appur: '3355c25a',
         appus: 'f1b918e9',
-        appusic: 'd4b609e4',
+        appusic: 'd4e44d5f',
         appusp: '7eb738b5',
-        appvce: '93bf82e2',
-        appvcu: 'f7e45631',
-        appvt: 'da2e12e1',
-        appyl: 'b256aca2',
+        appvce: 'eb3704b0',
+        appvcu: '55e15988',
+        appvt: 'ae1104dc',
+        appyl: '223d868e',
         'chunk-2d0e1764': '35b19a52',
-        'chunk-2d237b11': '0ed8cfe0',
+        'chunk-2d237b11': '2e23c5d7',
         appP: 'aba79bb3',
-        appplist: '63fc31ba',
-        appbk: '715ee4a9',
-        appchot: '8bdad03c',
-        'chunk-security': 'b4f59669',
+        appplist: '55bcb6f5',
+        appbk: '8b32aa0b',
+        appchot: '22ca5759',
+        'chunk-security': '1ae9280b',
         appsecbm: '89206446',
         appseccc: '17be87d2',
         appseccmi: '7d1f965d',
@@ -238,14 +240,14 @@
         appsecubp: '679c980d',
         appsecucp: 'ff792363',
         appsecucpi: '619eee4b',
-        appps: '6908df06',
+        appps: '9b65d5ee',
         appPK: '0ad23f8c',
         appPb: '408e88b7',
         appPl: '9d10cd72',
         appPm: '35b5010a',
         appPs: 'e473fd97',
         appPw: '1e740a22',
-        appVc: '8ac48c51',
+        appVc: '8fe0929e',
         appPslt: '062455ee',
         appPllt: 'a3e0ca76'
       }
@@ -464,19 +466,19 @@
     },
     '11ad': function (e, t, n) {
       'use strict';
-      n.d(t, 'o', function () {
+      n.d(t, 'p', function () {
         return h
       }),
-      n.d(t, 'y', function () {
+      n.d(t, 'z', function () {
         return m
       }),
-      n.d(t, 'z', function () {
+      n.d(t, 'A', function () {
         return b
       }),
-      n.d(t, 'x', function () {
+      n.d(t, 'y', function () {
         return y
       }),
-      n.d(t, 'A', function () {
+      n.d(t, 'B', function () {
         return k
       }),
       n.d(t, 'g', function () {
@@ -491,10 +493,10 @@
       n.d(t, 'e', function () {
         return O
       }),
-      n.d(t, 'q', function () {
+      n.d(t, 'r', function () {
         return I
       }),
-      n.d(t, 'r', function () {
+      n.d(t, 's', function () {
         return C
       }),
       n.d(t, 'd', function () {
@@ -506,44 +508,47 @@
       n.d(t, 'j', function () {
         return E
       }),
-      n.d(t, 't', function () {
+      n.d(t, 'u', function () {
         return S
       }),
-      n.d(t, 's', function () {
+      n.d(t, 't', function () {
         return P
       }),
-      n.d(t, 'v', function () {
+      n.d(t, 'w', function () {
         return H
       }),
-      n.d(t, 'w', function () {
+      n.d(t, 'x', function () {
         return T
       }),
-      n.d(t, 'u', function () {
+      n.d(t, 'v', function () {
         return L
       }),
-      n.d(t, 'k', function () {
+      n.d(t, 'l', function () {
         return q
       }),
-      n.d(t, 'n', function () {
+      n.d(t, 'o', function () {
         return R
       }),
-      n.d(t, 'l', function () {
+      n.d(t, 'm', function () {
         return B
       }),
       n.d(t, 'c', function () {
         return U
       }),
-      n.d(t, 'p', function () {
+      n.d(t, 'q', function () {
         return M
       }),
       n.d(t, 'f', function () {
         return D
       }),
-      n.d(t, 'm', function () {
+      n.d(t, 'n', function () {
         return V
       }),
       n.d(t, 'b', function () {
         return $
+      }),
+      n.d(t, 'k', function () {
+        return G
       });
       var r = n('5176'),
       i = n.n(r),
@@ -654,7 +659,8 @@
       M = '//search.video.iqiyi.com/o',
       D = '//pub.m.iqiyi.com/h5/main/hotFeeds/',
       V = '//pub.m.iqiyi.com/h5/main/playlist/',
-      $ = '//baike.iqiyi.com/v1/bk/entry/get_entry_info.action'
+      $ = '//baike.iqiyi.com/v1/bk/entry/get_entry_info.action',
+      G = '//pub.m.iqiyi.com/h5/main/miniVideo/share/'
     },
     '14cb': function (e, t, n) {
       'use strict';
@@ -767,11 +773,11 @@
                   ]
                 }
               }, [
-                n('HeaderTopButton', {
+                n('HeaderTopButton', e._b({
                   attrs: {
                     src: e.headerCallAppBtn
                   }
-                })
+                }, 'HeaderTopButton', e.$attrs, !1))
               ], 1)
             ], 1)
           ], 1)
@@ -7729,10 +7735,10 @@
             _ = n('53a7'),
             x = n('11ad');
             n.d(t, 'E', function () {
-              return x['y']
+              return x['z']
             }),
             n.d(t, 'F', function () {
-              return x['z']
+              return x['A']
             });
             var N = '',
             O = '1',
@@ -7884,7 +7890,7 @@
                     case 4:
                       return r = {
                         agenttype: Object(g['s']) (),
-                        ptid: x['o']
+                        ptid: x['p']
                       },
                       r.qd_sc = Object(g['A']) (r, '&', ae),
                       e.next = 8,
@@ -8211,7 +8217,7 @@
                   while (1) switch (e.prev = e.next) {
                     case 0:
                       return t.agenttype = Object(g['s']) (),
-                      t.ptid = x['o'],
+                      t.ptid = x['p'],
                       e.next = 4,
                       Object(b['b']) ();
                     case 4:
@@ -8601,7 +8607,7 @@
                       r = {
                         agenttype: t,
                         sign: m() (n.substring(4, 36) + '|' + t + '|' + ae),
-                        ptid: x['o'],
+                        ptid: x['p'],
                         version: '3.0'
                       },
                       e.next = 5,
@@ -9569,6 +9575,9 @@
             n.d(t, 'r', function () {
               return K
             }),
+            n.d(t, 'z', function () {
+              return J
+            }),
             n.d(t, 't', function () {
               return W
             }),
@@ -9832,7 +9841,7 @@
               return e = e.params || e.query || e,
               $(u['d']) (e)
             },
-            J = $(u['k']),
+            J = ($(u['k']), $(u['l'])),
             W = $(u['e']);
             function X(e) {
               return Z.apply(this, arguments)
@@ -10103,7 +10112,7 @@
             },
             l = Object(s['a']) (d, c, u, !1, null, null, null),
             p = l.exports,
-            f = n('2f62');
+            f = (n('54ba'), n('2f62'));
             function h() {
               return {
                 pageStyle: {
@@ -10941,6 +10950,24 @@
                 path: '/activity/callapp',
                 component: function () {
                   return n.e('appaca').then(n.bind(null, '7221'))
+                }
+              },
+              {
+                path: '/m/smallvideo/share',
+                components: {
+                  header: te['a'],
+                default:
+                  function () {
+                    return Promise.all([n.e('chunk-common'),
+                    n.e('appsmv')]).then(n.bind(null, 'ada5'))
+                  }
+                },
+                props: {
+                  header: {
+                    showNav: !1,
+                    fixed: !0,
+                    topButton: 'smallTopButton'
+                  }
                 }
               },
               {
@@ -13292,7 +13319,7 @@
               name: 'GlobalComponents',
               components: {
                 GlobalPopup: qt,
-                GlobalCallapp: function(){},
+                GlobalCallapp: Vt,
                 GlobalClipboard: Ft,
                 GlobalToast: $t['a'],
                 GlobalSwitcher: tn
@@ -14663,8 +14690,33 @@
               }
             },
             ke = n('dff0'),
-            _e = (n('96cf'), n('3b8d')),
-            xe = (n('7f7f'), [
+            _e = (n('96cf'), n('3b8d'));
+            n('7f7f');
+            function xe() {
+              var e;
+              null == window.MutationObserver && (e = function () {
+                function e(e) {
+                  this.callBack = e
+                }
+                return e.prototype.observe = function (e, t) {
+                  return this.element = e,
+                  this.interval = setInterval(function (e) {
+                    return function () {
+                      var t;
+                      if (t = e.element.innerHTML, t !== e.oldHtml) return e.oldHtml = t,
+                      e.callBack.apply(null)
+                    }
+                  }(this), 200),
+                  this.interval
+                },
+                e.prototype.disconnect = function () {
+                  return window.clearInterval(this.interval)
+                },
+                e
+              }(), window.MutationObserver = e)
+            }
+            xe();
+            var Ne = [
               'border',
               'borderRadius',
               'color',
@@ -14672,9 +14724,9 @@
               'width',
               'height',
               'backgroundImage'
-            ]),
-            Ne = document.createElement('style');
-            function Oe(e) {
+            ],
+            Oe = document.createElement('style');
+            function Ie(e) {
               var t = window.getComputedStyle(e, null) || {
               },
               n = e.style;
@@ -14684,7 +14736,7 @@
                 elStyle: n
               }
             }
-            function Ie(e) {
+            function Ce(e) {
               var t = e.el,
               n = e.computedStyle,
               r = e.elStyle,
@@ -14699,14 +14751,14 @@
                 computedStyle: n
               }
             }
-            function Ce(e) {
+            function je(e) {
               var t = e.el,
               n = e.name,
               r = e.style,
               i = (e.elStyle, e.computedStyle),
               a = JSON.parse(he() (i));
               return t.style.display = 'block',
-              xe.forEach(function (e) {
+              Ne.forEach(function (e) {
                 t.style[e] = a[e]
               }),
               setTimeout(function () {
@@ -14714,19 +14766,19 @@
               }, 200),
               r
             }
-            function je(e) {
-              document.getElementsByTagName('HEAD').item(0).appendChild(Ne),
-              Ne.innerHTML += '\n' + e
+            function Ae(e) {
+              document.getElementsByTagName('HEAD').item(0).appendChild(Oe),
+              Oe.innerHTML += '\n' + e
             }
-            Ne.type = 'text/css';
-            var Ae = Object(x['G']) (Oe, Ie, Ce, je);
-            function Ee(e, t) {
-              Ae(e),
+            Oe.type = 'text/css';
+            var Ee = Object(x['G']) (Ie, Ce, je, Ae);
+            function Se(e, t) {
+              Ee(e),
               t || e.childNodes && e.childNodes.forEach(function (e) {
-                'A' === e.tagName && Ee(e, !0)
+                'A' === e.tagName && Se(e, !0)
               })
             }
-            var Se = function () {
+            var Pe = function () {
               function e(t) {
                 Object(se['a']) (this, e),
                 this.observer = new MutationObserver(this.mutationHandle.bind(this)),
@@ -14762,7 +14814,7 @@
               ]),
               e
             }(),
-            Pe = function () {
+            He = function () {
               function e(t) {
                 Object(se['a']) (this, e),
                 this.el = t,
@@ -14807,22 +14859,22 @@
                 {
                   key: 'rmoveSensitiveClass',
                   value: function () {
-                    Ee(this.el)
+                    Se(this.el)
                   }
                 }
                 ]), e
               }();
-              function He(e, t) {
+              function Te(e, t) {
                 var n = this;
                 e.forEach(function (e) {
                   e.target === n && !e.contentRect.width && e.contentRect.height
                 })
               }
-              var Te = {
+              var Le = {
                 bind: function (e, t, n) {
-                  e.observer = new Se(e),
-                  e.resizeObserver = new z['a'](He.bind(e)).observe(e);
-                  var r = new Pe(e);
+                  e.observer = new Pe(e),
+                  e.resizeObserver = new z['a'](Te.bind(e)).observe(e);
+                  var r = new He(e);
                   setTimeout(function () {
                     Object(ke['h']) (e) || r.addImportant()
                   }, 5000)
@@ -14833,12 +14885,12 @@
                   delete e.resizeObserver
                 }
               },
-              Le = n('e814'),
-              qe = n.n(Le);
-              function Re(e, t, n) {
+              qe = n('e814'),
+              Re = n.n(qe);
+              function Be(e, t, n) {
                 var r = t.video,
                 i = t.context;
-                return r && 1 === qe() (r.interactionType) ? (i && i.$dispatch && i.$dispatch('GlobalCallapp', 'toPlay', {
+                return r && 1 === Re() (r.interactionType) ? (i && i.$dispatch && i.$dispatch('GlobalCallapp', 'toPlay', {
                   extralOptions: {
                     aid: r.albumId || r.aid,
                     tvid: r.qipuId || r.tvid,
@@ -14851,11 +14903,11 @@
                   showCopyCode: !1
                 }), 'done')  : 'next'
               }
-              function Be(e, t, n) {
+              function Ue(e, t, n) {
                 return Object(k['A']) (n, e),
                 'done'
               }
-              function Ue() {
+              function Me() {
                 for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                 return function () {
                   for (var e = 0; e < t.length; e++) {
@@ -14864,26 +14916,26 @@
                   }
                 }
               }
-              var Me = new _['a'](function (e, t, n) {
+              var De = new _['a'](function (e, t, n) {
                 var r = t.video,
                 i = t.context;
-                r.play || (n.preventDefault(), Ue(Re, Be) (e, {
+                r.play || (n.preventDefault(), Me(Be, Ue) (e, {
                   video: r,
                   context: i
                 }, n))
               }, {
                 key: 'video_href_click'
               }),
-              De = {
+              Ve = {
                 bind: function (e, t, n) {
                   var r = t.value;
-                  Me.observe(e, {
+                  De.observe(e, {
                     video: r,
                     context: n.context
                   })
                 },
                 unbind: function (e, t) {
-                  Me.unobserve(e)
+                  De.unobserve(e)
                 }
               };
               r['default'].directive('scroll', v),
@@ -14895,8 +14947,8 @@
               r['default'].directive('play', ue),
               r['default'].directive('clipboard', pe),
               r['default'].directive('copy-callapp', we),
-              r['default'].directive('protect', Te),
-              r['default'].directive('video-href', De)
+              r['default'].directive('protect', Le),
+              r['default'].directive('video-href', Ve)
             },
             f4c6: function (e, t, n) {
               'use strict';
@@ -15335,5 +15387,5 @@
               s = Object(u['a']) (c, r, i, !1, null, null, null);
               t['a'] = s.exports
             }
-          });
+});
   

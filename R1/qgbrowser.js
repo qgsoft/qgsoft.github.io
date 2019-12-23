@@ -108,6 +108,8 @@ var clearAd = {
         }   
     }
 }
+
+//开始删除广告
 function begindeletead(){
     clearAd.clear_ad();
     var mutationObserver = new MutationObserver(function(mutations) {
@@ -127,13 +129,12 @@ function begindeletead(){
     })
 }
 
-//
+//对象隐藏时播放视频
 function objectIsHide(ele,video) {
     for( var i = 0; i < ele.length; i++ ){  
         var node = ele[i];
         if( node.clientHeight > 0 && video.paused ) {
             video.play();
-            console.log("播放一次:"+videosite.src);
             break;         
         }
     }
@@ -164,12 +165,7 @@ function videosite(){
     }
 }
 
-function PlayerVideo(){
-    if( window.location.host.concat("iqiyi") ) {
-        document.getElementById('video').play();
-    }
-}
-
+//初始化
 if( !document.getElementById("qginit") ){
     var newEle = document.createElement("script");
     newEle.id = "qginit";
