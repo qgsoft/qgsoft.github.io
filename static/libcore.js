@@ -1,8 +1,186 @@
-var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.checkStringArgs=function(a,c,b){if(null==a)throw new TypeError("The 'this' value for String.prototype."+b+" must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype."+b+" must not be a regular expression");return a+""};$jscomp.ASSUME_ES5=!1;$jscomp.ASSUME_NO_NATIVE_MAP=!1;$jscomp.ASSUME_NO_NATIVE_SET=!1;$jscomp.SIMPLE_FROUND_POLYFILL=!1;
-$jscomp.defineProperty=$jscomp.ASSUME_ES5||"function"==typeof Object.defineProperties?Object.defineProperty:function(a,c,b){a!=Array.prototype&&a!=Object.prototype&&(a[c]=b.value)};$jscomp.getGlobal=function(a){return"undefined"!=typeof window&&window===a?a:"undefined"!=typeof global&&null!=global?global:a};$jscomp.global=$jscomp.getGlobal(this);
-$jscomp.polyfill=function(a,c,b,d){if(c){b=$jscomp.global;a=a.split(".");for(d=0;d<a.length-1;d++){var e=a[d];e in b||(b[e]={});b=b[e]}a=a[a.length-1];d=b[a];c=c(d);c!=d&&null!=c&&$jscomp.defineProperty(b,a,{configurable:!0,writable:!0,value:c})}};
-$jscomp.polyfill("String.prototype.startsWith",function(a){return a?a:function(a,b){var c=$jscomp.checkStringArgs(this,a,"startsWith");a+="";var e=c.length,f=a.length;b=Math.max(0,Math.min(b|0,c.length));for(var g=0;g<f&&b<e;)if(c[b++]!=a[g++])return!1;return g>=f}},"es6","es3");var NeedInterceptCheckVideo=!1,REGREX_IQY=[/.*t7z.cupid.iqiyi.com.*?/i];function OnLoad(){app.log("\u52a0\u8f7d\u5b8c\u6210")}function OnLoadUrl(a,c){return c.getUrl().getScheme().startsWith("http")?!1:!0}
-function OnLoadUrl2(a,c){return c.getScheme().startsWith("http")?!1:!0}function BlockAD_IQY(a){try{if(null!=(result=/(.*\()(\{.*\})/i.exec(a))){var c=result[1],b=result[2];if(!c||!b)return!1;b=JSON.parse(b);if(!b)return!1;var d=!1;if("3.0"==b.v)for(var e=b.s,f=0;f<e.length;f++){var g=e[f].a;g&&0<g.length&&(e.splice(f,1),d=!0)}if(d){var h=JSON.stringify(b);return c+h+")"}}return a}catch(k){return""}}
-function OnInterceptRequest(a,c,b,d,e,f){if(NeedInterceptCheckVideo){if(REGREX_IQY[0].test(b)&&(a=(new Http(b,"get")).run()))return["application/json","utf-8",BlockAD_IQY(a)];if(0<b.lastIndexOf("chunk-vendors."))return[c,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/chunk-vendors.min.js"];if(0<b.lastIndexOf("chunk-video"))return[c,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/chunk-video.min.js"];if(0<b.lastIndexOf("appPl."))return[c,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/appPl.min.js"];
-if(0<b.lastIndexOf("main."))return[c,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/main.min.js"];if(0<b.lastIndexOf("chunk-common."))return[c,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/chunk-common.min.js"];if(0<b.lastIndexOf("appPs."))return[c,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/appPs.min.js"];if(0<b.lastIndexOf("appP."))return[c,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/appP.min.js"];if(0<b.lastIndexOf("chunk-play."))return[c,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/chunk-play.min.js"]}return!1}
-function OnUrlChange(a){NeedInterceptCheckVideo=!1;0<=a.indexOf("iqiyi")?(app.SetCookies(".iqiyi.com",["P00003=1;","P00002=1;"]),NeedInterceptCheckVideo=!0,app.SetInterceptResource(!1)):app.SetInterceptResource(!0)}function OnPageStart(a,c){}function OnPageLoadComplete(){};
+//---------------------Global Vars-------------------------
+//需要拦截检查视频
+var NeedInterceptCheckVideo = false;
+var REGREX_IQY = [ 
+    new RegExp(".*t7z.cupid.iqiyi.com.*?","i")
+];
+var REGREX_VQQ = [
+    new RegExp(".*livew.l.qq.com/livemsg.*?","i"),
+    new RegExp(".*btrace.video.qq.com.*?","i")
+]
+//---------------------------------------------------------
+
+//脚本被加载
+function OnLoad() {
+    app.log("加载完成");
+}
+
+//是否允许打开一个新的网址
+function OnLoadUrl(webView,request) {
+    var schema = request.getUrl().getScheme();
+    //非HTTP类型的都禁止打开
+    if(!schema.startsWith("http")){
+        return true;
+    }
+    //允许打开URL
+    return false;
+}
+
+//低版本的API处理
+function OnLoadUrl2(webView,androidUrl) {
+    var schema =  androidUrl.getScheme();
+    //非HTTP类型的都禁止打开
+    if(!schema.startsWith("http")){
+        return true;
+    }
+    //允许打开URL
+    return false;
+}
+
+//Block爱奇艺广告
+function BlockAD_IQY(text) {
+    try{
+        var reg_val = /(.*\()(\{.*\})/i;
+        if( (result = reg_val.exec(text)) != null ) {
+            var oldHeader = result[1];
+            var jsonValue = result[2];
+            //错误的格式
+            if(!oldHeader || !jsonValue) return false;
+            //转换为JSON
+            jsonValue = JSON.parse(jsonValue);
+            if(!jsonValue) return false;    
+            //开始处理，先判断一下版本，目前只支持最新的3.0
+            var haveAd = false;
+            var version = jsonValue.v;
+            if( version == "3.0") {
+                var s = jsonValue.s;
+                for(var i = 0; i < s.length; i++){
+                    var vItem = s[i];
+                    var adList = vItem.a;
+                    if( adList && adList.length > 0 ){
+                        s.splice(i,1);
+                        haveAd = true;
+                    }
+                }
+            }
+            if( haveAd ){
+                var dv = JSON.stringify(jsonValue);
+                return oldHeader + dv + ")";
+            }
+        }
+        return text;
+    } catch(e) {
+        return "";
+    }
+}
+
+//Block腾讯视频广告
+function Block_VQQ(text){
+    try{
+        var reg_val = /(.*\()(\{.*\})/i;
+        if( (result = reg_val.exec(text)) != null ) {
+            var oldHeader = result[1];
+            var jsonValue = result[2];
+            //错误的格式
+            if(!oldHeader || !jsonValue) return false;
+            
+            //转换为JSON
+            jsonValue = JSON.parse(jsonValue);
+            if(!jsonValue) return false; 
+
+            var haveAd = false;
+            var adlist = jsonValue.adList;
+            if( adlist ) {
+                var s = adlist.item;
+                if( s ) {
+                    s.splice(0,s.length);
+                    haveAd = true;       
+                }
+            }
+            var adLoc = jsonValue.adLoc;
+            if( adLoc ){
+                adLoc.iCheckLogin = 0,
+                adLoc.iCheckUser = 0,
+                adLoc.iVipInfoRsp = 1,
+                adLoc.isvip = 1;
+                haveAd = true;
+            }
+            if( haveAd ){
+                var dv = JSON.stringify(jsonValue);
+                return oldHeader + dv + ")";
+            }
+        }
+        return text;
+    } catch(e) {
+        return "";
+    }
+}
+
+//参数1:webView是不靠谱的。可能会为空在ServiceWorkder线程中
+//拦截一个请求、JS文件等。支持拦截ServiceWorker中的请求
+function OnInterceptRequest(webView,request,webUrl,isFromMainFrame,isGet,scheme) {
+    //是视频网站要检查
+    if(NeedInterceptCheckVideo){
+        //爱奇艺广告BLOCK
+        if(REGREX_IQY[0].test(webUrl)) {
+            var client = new Http(webUrl,"get").run();
+            if(client){
+                return ["application/json","utf-8",BlockAD_IQY(client)];
+            }
+        } else if(REGREX_VQQ[0].test(webUrl)) {
+            var client = new Http(webUrl,"get").run();
+            if(client){
+                return ["text/json","utf-8",Block_VQQ(client)];
+            }
+        } else if(REGREX_VQQ[1].test(webUrl)) {
+            return ["","",""];
+        }
+        else{
+            if (webUrl.lastIndexOf("chunk-vendors.") > 0 ){
+                return [request,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/chunk-vendors.min.js"];
+            } else if (webUrl.lastIndexOf("chunk-video") > 0 ){
+                return [request,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/chunk-video.min.js"];
+            } else if (webUrl.lastIndexOf("appPl.") > 0 ){
+                return [request,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/appPl.min.js"];
+            } else if (webUrl.lastIndexOf("main.") > 0 ){
+                return [request,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/main.min.js"];
+            } else if (webUrl.lastIndexOf("chunk-common.") > 0 ){
+                return [request,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/chunk-common.min.js"];
+            } else if (webUrl.lastIndexOf("appPs.") > 0 ){
+                return [request,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/appPs.min.js"];
+            } else if (webUrl.lastIndexOf("appP.") > 0 ){
+                return [request,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/appP.min.js"];
+            } else if (webUrl.lastIndexOf("chunk-play.") > 0 ){
+                return [request,"https://cdn.jsdelivr.net/gh/qgsoft/QGScripts@0.001/iqy/chunk-play.min.js"];
+            }
+        }
+    }
+    return false;
+}
+
+//进入一个新的网站
+function OnUrlChange(url){
+    NeedInterceptCheckVideo = false;
+    //进入爱奇艺
+    if(url.indexOf("iqiyi")>=0){
+        app.SetCookies(".iqiyi.com",["P00003=1;","P00002=1;"]);
+        NeedInterceptCheckVideo = true;
+        app.SetInterceptResource(false);
+    } else if (url.indexOf("v.qq.com")>=0){
+        NeedInterceptCheckVideo = true;
+        app.SetInterceptResource(false);
+    }
+    else {
+        app.SetInterceptResource(true);
+    }
+}
+
+//页面开始加载
+function OnPageStart(webView,url) {
+
+}
+
+//一个页面加载完成
+function OnPageLoadComplete() {
+
+}
