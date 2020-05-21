@@ -1,8 +1,8 @@
 
 {
   "enable":true,
-  "version":5,
-  "forceupdate":true,
-  "msg":"提升稳定性(更新请在任务栏查看，并非闪退)",
-  "downurl":"http://qiniou.qgdev.cc/QGBrowser.apk"
+  "version":6,
+  "forceupdate":false,
+  "msg":"优酷已更新滑动快进,近期调整中。",
+  "downurl":"http://qiniou.qgdev.cc/QGBrowser521.apk"
 }
